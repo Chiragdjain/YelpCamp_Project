@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+
+    <% layout('../layouts/boilerplate') %>
+    <h1 class="text-center">Edit <%= camp[0].title %> Campground</h1>
+    <!-- <form action="/campgrounds/<%= camp[0]._id %>?_method=PUT" method="POST">
+        <input type="text" value="<%= camp[0].title %>" placeholder="Title" name="title">
+        <input type="text" value="<%= camp[0].price %>" placeholder="Price" name="price">
+        <input type="text" value="<%= camp[0].description %>" placeholder="Description" name="description">
+        <input type="text" value="<%= camp[0].location %>" placeholder="Location" name="location">
+        <button>Submit</button>
+    </form> -->
+
+    
+
+    <div class="col-6 offset-3">
+        <form class="row g-3 needs-validation" novalidate action="/campgrounds/<%= camp[0]._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input required value="<%= camp[0].title %>" class="form-control" type="text" placeholder="Title" name="camps[title]" id="title">
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+            <div class="mb-3">
+                
+                <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Rs.</span>
+                            <input required value="<%= camp[0].price %>" class="form-control" type="Number" min="0" placeholder="Price" name="camps[price]" id="price" aria-label="Username" aria-describedby="basic-addon1"> 
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                    </div>
+            </div>
+
+            <!-- <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div> -->
+
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input required value="<%= camp[0].location %>" class="form-control" type="text" placeholder="Location" name="camps[location]" id="location">
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupFile01">Add More Images</label>
+                <input type="file" class="form-control" name="image" multiple id="inputGroupFile01">
+              </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea required class="form-control" type="text" placeholder="Description" name="camps[description]" id="description"><%= camp[0].description %></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+            <% camp[0].img.forEach(function(img,i){ %>
+                
+                <img class="img-thumbnail" src="<%= img.thumbnail %>" style="width: auto;" alt="">
+                <div class="form-check-inine">
+                    <input type="checkbox" name="deleteImages[]" id="img<%=i%>" value="<%= img.filename %>">
+                    <label for="img<%=i%>">Delete</label>
+                </div>
+
+            <% }) %>
+
+          
+            <!-- <%= camp[0].img %> -->
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+<!-- </body>
+</html> -->

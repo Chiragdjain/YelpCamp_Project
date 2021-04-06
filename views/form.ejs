@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+
+    <% layout('../layouts/boilerplate') %>
+
+    <div class="col-9 mx-auto col-lg-6  offset-lg-3">
+      <div class="container d-flex mb-2 mt-0 align-items-center justify-content-center">
+           <div class="row">
+               <div class="col-12 col-md-9   offset-lg-2">
+                      <div class="card shadow">
+                          <img class="card-img-top" src="https://images.unsplash.com/photo-1496545672447-f699b503d270?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80" alt="">
+                         <div class="card-body">
+                             <h5 class="text-center card-title">Create New CampGround</h5>
+                             <form class="row g-3 needs-validation" novalidate action="/campgrounds" method="POST" enctype="multipart/form-data">
+
+
+                              <div class="mb-3">
+                                  <label class="form-label" for="title">Title</label>
+                                  <input class="form-control" type="text" placeholder="Title" required  name="camps[title]" id="title">
+                                  <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                              </div>
+                            
+                              <div class="mb-3">
+                                  
+                                  <label class="form-label" for="price">Price</label>
+                                      <div class="input-group">
+                                              <span class="input-group-text" id="basic-addon1">Rs.</span>
+                                              <input  required class="form-control" type="Number"  placeholder="Price" name="camps[price]" id="price" aria-label="Username" aria-describedby="basic-addon1"> 
+                                              <div class="valid-feedback">
+                                                  Looks good!
+                                                </div>
+                                          </div>
+                              </div>
+                            
+                            
+                            
+                              <div class="mb-3">
+                                  <label class="form-label" for="location">Location</label>
+                                  <input  required class="form-control" type="text" placeholder="Location" name="camps[location]" id="location">
+                                  <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                              </div>
+                            
+                            
+                              <div class="input-group mb-3">
+                                  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                                  <input type="file" class="form-control" name="image" multiple id="inputGroupFile01">
+                                </div>
+                            
+                            
+                            
+                              <div class="mb-3">
+                                  <label class="form-label" for="description">Description</label>
+                                  <textarea  required class="form-control" type="text" placeholder="Description" name="camps[description]" id="description"></textarea>
+                                  <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                              </div>
+                            
+                            
+                              <button class="btn btn-block btn-success">Submit</button>
+                            </form>
+                         </div>
+                      </div>
+               </div>
+           </div>
+      </div>
+  </div>
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+           (function () {
+           'use strict'
+
+           // Fetch all the forms we want to apply custom Bootstrap validation styles to
+           var forms = document.querySelectorAll('.needs-validation')
+
+           // Loop over them and prevent submission
+           Array.prototype.slice.call(forms)
+               .forEach(function (form) {
+               form.addEventListener('submit', function (event) {
+                   if (!form.checkValidity()) {
+                   event.preventDefault()
+                   event.stopPropagation()
+                   }
+
+                   form.classList.add('was-validated')
+               }, false)
+               })
+           })()
+   </script>
+
+
+
+<!-- </body>
+</html> -->
+
