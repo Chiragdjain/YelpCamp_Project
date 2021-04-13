@@ -53,7 +53,7 @@
               <div class="card mb-4">
                 <div class="card-body">
                   <h5 class="card-title  d-inline-block"><%= camp.title %></h5>
-                  <h6 class="card-title"  style="float: right;margin-right: 10px;">Created By - <b><%= camp.author[0].username %></b></h6>
+                  <h6 class="card-title"  style="float: right;margin-right: 10px;">Created By - <b><%= camp.author.username %></b></h6>
                   <p class="card-text"><b><%= camp.description %></b></p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -64,7 +64,7 @@
                 
                 
                   <% if(currentUser) { %>
-                    <% if((currentUser._id).equals(camp.author[0]._id)){ %>
+                    <% if((currentUser._id).equals(camp.author._id)){ %>
                       <div class="card-body">
                         <button class="btn btn-info"><a style="text-decoration: none;color: white;" href="/campgrounds/<%= camp._id %>/edit" class="card-link">Edit</a></button>
                         <form style="display: inline-block;" action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST"><button class="btn btn-danger">DELETE</button></form>
